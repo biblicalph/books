@@ -1,39 +1,37 @@
 NODEJS EVENT LOOP
-===========================================
-* Consider the code in [while loop example](./001-while-loop.js) for the questions below
+___
 
-a. While the above code terminate? Explain your answer
+**Question**
 
-<strong>Answer</strong>
+Consider the code in [while loop example](./001-while-loop.js) for the questions below
+
+a. Will the above code terminate? Explain your answer
+
+**Answer**
 
 No. The while loop occupies the event loop and prevents the setTimeout callback to be executed. 
 The program is thus basically an infinite loop that will only terminate when Node runs out of memory
 
-* Consider the program in [deferred event sources](./002-deferred-events.js)
+**Question**
+
+Consider the program in [deferred event sources](./002-deferred-events.js)
 
 a. What is the output of the program?
 
-<strong>Answer</strong>
+**Answer**
 
-1: first console log ...
+- first console log ...
+- emitter callback ...
+- second console log ...
+- process.nextTick callback ...
+- 1ms timeout ...
+- first stat ...
+- second stat ...
+- setImmediate callback ...
+- 10ms callback ...
 
-2: emitter callback ...
+**Explanation**
 
-3: second console log ...
-
-4: process.nextTick callback ...
-
-5: 1ms timeout ...
-
-6: first stat ...
-
-7: second stat ...
-
-8: setImmediate callback ...
-
-9: 10ms callback ...
-
-Explanation
 `process.nextTick` calls execute before I/O and timer events but after all synchronous code (loops, expressions and events 
 emitted within the current context). 
 Thus console logs and emitter callback execute first.
