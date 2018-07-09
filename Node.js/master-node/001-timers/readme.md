@@ -3,7 +3,7 @@ TIMERS
 
 **Question**
 
-What is the difference between process.nextTick and setImmediate?
+What is the difference between `process.nextTick` and `setImmediate`?
 
 **Answer**
 
