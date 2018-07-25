@@ -1,0 +1,59 @@
+{
+  "name": "biblicalph-books",
+  "version": "1.0.0",
+  "description": "Attempt to capture essence of books I read and tutorials for posterity",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "precommit": "lint-staged",
+    "cz": "git-cz"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "prettier-standard",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "node_modules/*"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "prettierPath": "prettier-standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biblicalph/books.git"
+  },
+  "keywords": [
+    "master",
+    "node",
+    "timers",
+    "events",
+    "streams",
+    "sorting",
+    "algorithms",
+    "data",
+    "structures"
+  ],
+  "author": "kwabena boadu <shadrack.boadu@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biblicalph/books/issues"
+  },
+  "homepage": "https://github.com/biblicalph/books#readme",
+  "devDependencies": {
+    "commitizen": "2.10.1",
+    "cz-conventional-changelog": "2.1.0",
+    "husky": "0.14.3",
+    "jest": "23.4.1",
+    "prettier-standard": "8.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

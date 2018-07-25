@@ -18,7 +18,7 @@ fs.stat(__filename, (err, stats) => {
     return
   }
 
-  console.log(`${++stackPosition}: first stat callback`, stats)
+  console.log(message, stats)
 })
 
 setTimeout(_ => console.log(`${++stackPosition}: 1ms setTimeout callback`))

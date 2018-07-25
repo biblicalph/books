@@ -9,7 +9,7 @@ What is the difference between `process.nextTick` and `setImmediate`?
 
 `process.nextTick` registers callbacks which are placed at the top of the event queue and executed after execution 
 of the current script but before execution of any I/O or timer event callbacks. 
-`setImmediate` on the otherhand registers callback which are executed after I/O events.
+`setImmediate` on the otherhand registers callbacks which are executed after I/O events.
 Conclusion: `process.nextTick` pushes callbacks to the top of the events queue. `process.nextTick` callbacks execute
 before `setImmediate` callbacks
 
@@ -38,7 +38,7 @@ a. What is the output of the above program?
 
 **Answer**
 
-The above snippet does not output anything even though the `start` event callback logs to the console
+The above snippet does not output anything even though the `start` event listener logs to the console
 
 b. Explain your answer to question 2a
 
@@ -94,8 +94,10 @@ a. What is the output of snippet1.js and snippet2.js?
 
 **Answer**
 
-The order of execution of `sayHello` and `sayWorld` in `snippet1.js` is not guaranteed. Thus the output is also not guaranteed
-`sayHello` will always execute before `sayWorld` in `snippet2.js`. Thus `Saying hello...` will be printed before `Saying world...`
+The order of execution of `sayHello` and `sayWorld` in `snippet1.js` is not guaranteed. Thus the output is also not guaranteed. Running this multiple times will produce different outpus; sometimes `Saying hello...` will be printed before `Saying world...`. Other times, the reverse occurs
+
+The output of `snippet2.js` is always `Saying hello...` followed by 
+`Saying world...` irrespective of how many times the script is run.
 
 b. Explain why the order of execution is unpredictable in snippet1.js but predictable in snippet2.js
 
@@ -133,9 +135,8 @@ b. Why is the output of the above script predictable even though different timeo
 
 **Answer**
 
-A timeout of 1ms is used for each of the setTimeout calls hence the predictable callback execution.
 The minimum allowed timeout for `setTimeout` is 1ms. If an invalid value (string, etc) or a value less than that is used, 
-the minimum default value (1ms).
+the minimum default value (1ms) is used. 
 
 c. If a timeout value of 2000ms (2s) is used in a setTimeout call, will the callback be executed after exactly 2s? Explain
 
