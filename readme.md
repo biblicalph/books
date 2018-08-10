@@ -1,6 +1,7 @@
 OVERVIEW
 ===============================
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Build Status](https://travis-ci.com/biblicalph/books.svg?branch=master)](https://travis-ci.com/biblicalph/books)
 
 This project is my attempt to capture insights from books I read and tutorials I watch for self-reference.
 If you are interested in this project and have insights to share or contribute, do feel 
